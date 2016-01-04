@@ -1,0 +1,25 @@
+{
+  "vm": {
+    "ip": "192.168.44.45",
+    "memory": "1024",
+    "synced_folders": [
+      {
+        "host_path": "data/",
+        "guest_path": "/var/www",
+        "type": "default"
+      }
+    ],
+    "forwarded_ports": []
+  },
+  "vdd": {
+    "sites": {
+      "iconcerts": {
+        "account_name": "root",
+        "account_pass": "root",
+        "account_mail": "box@example.com",
+        "site_name": "iConcerts",
+        "site_mail": "box@example.com"
+      }
+    }
+  }
+}
