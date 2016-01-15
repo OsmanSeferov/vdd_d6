@@ -1,26 +1,13 @@
 Vagrant.configure("2") do |config|
-<<<<<<< HEAD
-
-=======
->>>>>>> 79a59b2... initial commit
   # Load config JSON.
   config_json = JSON.parse(File.read("config.json"))
 
   # Prepare base box.
-<<<<<<< HEAD
-  config.vm.box = "ubuntu/trusty64"
-  config.vm.box_url = "https://atlas.hashicorp.com/ubuntu/trusty64"
-
-  # Configure networking.
-  config.vm.network :private_network, ip: config_json["vm"]["ip"]
-
-=======
   config.vm.box = "adyax-drupal6.box"
   config.vm.box_url = "http://download.adyax.com/www/?a=d&i=4955253523"
 
   # Configure networking.
   config.vm.network :private_network, ip: config_json["vm"]["ip"]
->>>>>>> 79a59b2... initial commit
   # Configure forwarded ports.
   config.vm.network "forwarded_port", guest: 35729, host: 35729, protocol: "tcp", auto_correct: true
   config.vm.network "forwarded_port", guest: 8983, host: 8983, protocol: "tcp", auto_correct: true
@@ -29,19 +16,11 @@ Vagrant.configure("2") do |config|
     config.vm.network "forwarded_port", guest: port["guest_port"],
       host: port["host_port"], protocol: port["protocol"], auto_correct: true
   end
-<<<<<<< HEAD
-
-=======
->>>>>>> 79a59b2... initial commit
   # Customize provider.
   config.vm.provider :virtualbox do |vb|
     # RAM.
     vb.customize ["modifyvm", :id, "--memory", config_json["vm"]["memory"]]
-<<<<<<< HEAD
-
-=======
     vb.cpus = config_json["vm"]["cpus"]
->>>>>>> 79a59b2... initial commit
     # Synced Folders.
     config_json["vm"]["synced_folders"].each do |folder|
       case folder["type"]
@@ -56,12 +35,6 @@ Vagrant.configure("2") do |config|
     end
   end
 
-<<<<<<< HEAD
-  # Run initial shell script.
-  config.vm.provision :shell, :path => "shell/initial.sh"
-  # Run final shell script.
-  config.vm.provision :shell, :path => "shell/final.sh", :args => config_json["vm"]["ip"]
-=======
   # Enable vagrant-hostsupdater support, if the plugin is installed
   # see https://github.com/cogitatio/vagrant-hostsupdater for details
   if Vagrant.has_plugin?("vagrant-hostsupdater")
@@ -94,6 +67,5 @@ Vagrant.configure("2") do |config|
   end
   # Run final shell script.
   config.vm.provision :shell, :path => "chef/shell/final.sh", :args => config_json["vm"]["ip"]
->>>>>>> 79a59b2... initial commit
 
 end

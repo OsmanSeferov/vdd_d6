@@ -27,24 +27,29 @@
     </ul>
 
     <h2 id="sites">Configured Sites</h2>
-
     <h3>Add the following to host machine's <a href="http://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/" target="_blank">hosts file</a>:</h3>
+    <p>You can install the <a href="https://github.com/cogitatio/vagrant-hostsupdater" target="_blank">vagrant-hostsupdater</a> plugin, which takes care of the host entries when starting and halting vagrant. To install the plugin just type:</p>
+    <ol class="code">
+          <li>$ vagrant plugin install vagrant-hostsupdater</li>
+          <li>$ vagrant reload</li>
+    </ol>
+    <p>Or copy and paste this configuration to your hosts file:</p>
     <ul class="code">
       <li># Sites declared in VDD's config.json</li>
-          <li>192.168.44.44 iconcerts.dev </li>
-            <li>192.168.44.44 www.iconcerts.dev </li>
+          <li>192.168.44.41 drupal6.adyax </li>
+            <li>192.168.44.41 www.drupal6.adyax </li>
       <li># End of sites declared with VDD</li>
     </ul>
 
     <ul>
       <li>
-         <a href="http://iconcerts.dev">iConcerts</a> (Drush alias is @iconcerts)
+         <a href="http://drupal6.adyax">Drupal 6</a> (Drush alias is @drupal6)
       </li>
     </ul>
 
     <h2 id="dev">Development Tools</h2>
     <ul>
-      <li><a href="http://192.168.44.44:1080/">MailCatcher</a></li>
+      <li><a href="http://192.168.44.41:1080/">MailCatcher</a></li>
       <li><a href="/phpmyadmin">phpMyAdmin</a></li>
       <li><a href="/phpinfo.php">phpinfo()</a></li>
       <li><a href="/webgrind">Webgrind</a></li>
@@ -77,7 +82,7 @@
     <ol class="code">
       <li>Win/Mac/Linux host$ vagrant ssh</li>
       <li>vagrant guest$ cd ~/sites/drupal8</li>
-      <li>vagrant guest$ git clone --branch 8.x http://git.drupal.org/project/drupal.git .</li>
+      <li>vagrant guest$ git clone --branch 8.0.x http://git.drupal.org/project/drupal.git .</li>
       <li>vagrant guest$ drush @drupal8 si standard -y</li>
     </ol>
 
