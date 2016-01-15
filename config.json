@@ -1,24 +1,48 @@
 {
   "vm": {
+<<<<<<< HEAD
     "ip": "192.168.44.45",
     "memory": "1024",
+=======
+    "ip": "192.168.44.41",
+    "memory": "1024",
+    "cpus" : "2",
+>>>>>>> 79a59b2... initial commit
     "synced_folders": [
       {
         "host_path": "data/",
         "guest_path": "/var/www",
+<<<<<<< HEAD
         "type": "default"
+=======
+        "type": "nfs"
+>>>>>>> 79a59b2... initial commit
       }
     ],
     "forwarded_ports": []
   },
   "vdd": {
     "sites": {
+<<<<<<< HEAD
       "iconcerts": {
         "account_name": "root",
         "account_pass": "root",
         "account_mail": "box@example.com",
         "site_name": "iConcerts",
         "site_mail": "box@example.com"
+=======
+      "drupal6": {
+        "account_name": "root",
+        "account_pass": "root",
+        "account_mail": "box@example.com",
+        "site_name": "Drupal 6",
+        "site_mail": "box@example.com",
+        "vhost": {
+          "document_root": "drupal6",
+          "url": "drupal6.adyax",
+          "alias": ["www.drupal6.adyax"]
+        }
+>>>>>>> 79a59b2... initial commit
       }
     }
   }
