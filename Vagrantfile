@@ -1,4 +1,5 @@
 Vagrant.configure("2") do |config|
+
   # Load config JSON.
   config_json = JSON.parse(File.read("config.json"))
 
