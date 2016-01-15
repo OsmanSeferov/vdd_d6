@@ -1,0 +1,31 @@
+{
+  "vm": {
+    "ip": "192.168.44.41",
+    "memory": "1024",
+    "cpus" : "2",
+    "synced_folders": [
+      {
+        "host_path": "data/",
+        "guest_path": "/var/www",
+        "type": "nfs"
+      }
+    ],
+    "forwarded_ports": []
+  },
+  "vdd": {
+    "sites": {
+      "drupal6": {
+        "account_name": "root",
+        "account_pass": "root",
+        "account_mail": "box@example.com",
+        "site_name": "Drupal 6",
+        "site_mail": "box@example.com",
+        "vhost": {
+          "document_root": "drupal6",
+          "url": "drupal6.adyax",
+          "alias": ["www.drupal6.adyax"]
+        }
+      }
+    }
+  }
+}
