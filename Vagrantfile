@@ -4,8 +4,8 @@ Vagrant.configure("2") do |config|
   config_json = JSON.parse(File.read("config.json"))
 
   # Prepare base box.
-  config.vm.box = "adyax-drupal6.box"
-  config.vm.box_url = "http://download.adyax.com/www/?a=d&i=4955253523"
+  config.vm.box = "osmanseferov/adyax-drupal6"
+  config.vm.box_url = "https://atlas.hashicorp.com/osmanseferov/boxes/adyax-drupal6"
 
   # Configure networking.
   config.vm.network :private_network, ip: config_json["vm"]["ip"]
