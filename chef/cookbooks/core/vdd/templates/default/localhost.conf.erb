@@ -10,6 +10,10 @@
     AllowOverride All
     Require all granted
   </Directory>
+
+  FastCgiServer /var/www/cgi-bin/php-cgi-5.3.29
+  ScriptAlias /cgi-bin-php/ /var/www/cgi-bin/
+
 </VirtualHost>
 
 <% @node["vdd"]["sites"].each do |index, site| %>
@@ -30,9 +34,6 @@
         AllowOverride None
         Require all granted
       </Directory>
-
-      FastCgiServer /var/www/cgi-bin/php-cgi-5.3.29
-      ScriptAlias /cgi-bin-php/ /var/www/cgi-bin/
 
       <Directory /var/www/<%= defined?(site["vhost"]["document_root"]) ? site["vhost"]["document_root"] : index %>>
         Options Indexes FollowSymLinks MultiViews
