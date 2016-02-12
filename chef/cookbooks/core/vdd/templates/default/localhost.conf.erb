@@ -1,3 +1,6 @@
+FastCgiServer /var/www/cgi-bin/php-cgi-5.3.29
+ScriptAlias /cgi-bin-php/ /var/www/cgi-bin/
+
 <VirtualHost *:80>
   DocumentRoot /var/www/html
   ServerName localhost
@@ -10,10 +13,6 @@
     AllowOverride All
     Require all granted
   </Directory>
-
-  FastCgiServer /var/www/cgi-bin/php-cgi-5.3.29
-  ScriptAlias /cgi-bin-php/ /var/www/cgi-bin/
-
 </VirtualHost>
 
 <% @node["vdd"]["sites"].each do |index, site| %>
@@ -39,6 +38,12 @@
         Options Indexes FollowSymLinks MultiViews
         AllowOverride All
         Require all granted
+
+        AddHandler php-cgi .php
+        Action php-cgi /cgi-bin-php/php-cgi-5.3.29
+        <FilesMatch "\.php$">
+            SetHandler php-cgi
+        </FilesMatch>
       </Directory>
     </VirtualHost>
   <%- end -%>
