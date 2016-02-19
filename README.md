@@ -11,7 +11,7 @@ The main goal of the project is to provide easy to use fully functional, highly 
 * Mailcatcher
 
 
-h2. Default credentials
+Default credentials:
 
 MySQL (also applies to PhpMyAdmin)
 user: root
