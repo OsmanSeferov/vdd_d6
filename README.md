@@ -9,3 +9,10 @@ The main goal of the project is to provide easy to use fully functional, highly 
 * Drush (with automatic aliases)
 * Xdebug, Webgrind (configured and ready to use)
 * Mailcatcher
+
+
+h2. Default credentials
+
+MySQL (also applies to PhpMyAdmin)
+user: root
+password: root
