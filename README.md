@@ -13,6 +13,6 @@ The main goal of the project is to provide easy to use fully functional, highly 
 
 Default credentials:
 
-MySQL (also applies to PhpMyAdmin)
-user: root
-password: root
+* MySQL (also applies to PhpMyAdmin)
+* user: root
+* password: root
